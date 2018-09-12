@@ -1,0 +1,101 @@
+body{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.dropdown-wrapper{
+
+    
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toogle-label{
+    position: relative;
+    padding: 14px 30px 14px 25px;
+    background-color: #474e5d;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 900;
+    border-radius: 3px;
+    font-family: cursive;
+    font-size: 12px;
+    transition: opacity .2s ease;
+    letter-spacing: .2px;
+    float: left;
+}
+
+.dropdown-toogle-label:active{
+    transform: scale(.97);
+}
+
+.dropdown-toogle-label:after{
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(45deg, #fff 50%, transparent 0);
+    position: absolute;
+    right: 15px;
+    top: 35%;
+    transform: rotate(-45deg);
+}
+
+.dropdown-wrapper input{display: none;}
+
+.dropdown-wrapper > input:checked + label:after{
+    top: 45%;
+    transform: rotate(135deg);
+}
+
+.dropdown-wrapper > input:checked + label + .dropdown{
+    display: inline-block;
+}
+
+.dropdown{
+    border: 2px solid #474e5d;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    padding: 5px;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    border-radius: 4px;
+    min-width: 150px;
+    display: none;
+}
+
+.dropdown label{
+    display: block;
+    margin-top: 2px;
+    padding: 12px 20px;
+    border-left: 0 solid transparent;
+    font-family: cursive;
+    font-size: 14px;
+    cursor: pointer;
+    color: #474e5d;
+    opacity: .8;
+    transition: 
+            border .3s ease,
+            padding-left .3s ease,
+            background-color .3s ease;
+}
+
+.dropdown label:hover{
+    border-left: 20px solid #474e5d;
+    border-radius: 10px;
+    background-color: rgba(180, 180, 180, .1);
+    opacity: .9;
+    font-weight: 700;
+}
+
+.dropdown input:checked + label{
+    font-weight: 700;
+    opacity: 1;
+    background-color: rgba(37, 71, 134, 0.589);
+    border-radius: 3px;
+    color: #fff;
+}
